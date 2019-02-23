@@ -1,6 +1,5 @@
 package com.target.treinamento.projeto_banco;
 
-import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,25 +10,29 @@ import java.util.List;
 
 import javax.naming.spi.DirStateFactory.Result;
 
+import com.target.treinamento.projeto_banco.dao.FuncionarioDao;
+
 public class App 
 {
 	public static void main( String[] args ) throws SQLException{
-
-		FabricaDeConexao fabricaDeConexao = new FabricaDeConexao();
-						
-		String sql = "SELECT F.ID, F.NOME, F.CARGO, F.IDADE, F.SALARIO FROM FUNCIONARIO F";
-		PreparedStatement preparedStatement = fabricaDeConexao.getPreparedStatement(sql);
-		
-		ResultSet resultSet = preparedStatement.executeQuery(sql);
-		
-		Integer id = resultSet.getInt("id");
-		String nome = resultSet.getString("nome");
-		Integer cargo = resultSet.getInt("cargo");
-		Integer idade = resultSet.getInt("idade");
-		Float salario = resultSet.getFloat("salario");
 		
 		
-		//List<Funcionario> listaFuncionarios = ArrayList<Funcionario>();
+		FuncionarioDao fDao = new FuncionarioDao();
+		
+		//fDao.cria(new Funcionario(null, "Rafael", 4, 28, 1800.00));
+		
+		
+		
+		List<Funcionario> lista = fDao.buscaTodos();
+		for (Funcionario funcionario : lista) {
+			
+			System.out.println(funcionario.toString());
+									
+		}
+			
+		
+		
+		}		
 		
 	}
-}
+

@@ -27,16 +27,6 @@ public class FabricaDeConexao {
 			e.printStackTrace();
 
 			// finally sempre é executado e portanto deverá ser declarado o fechamento da conexão com o banco de dados
-		} finally {
-			if (connection != null) {
-				try {
-					connection.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
-
 		}
 				
 		return connection;

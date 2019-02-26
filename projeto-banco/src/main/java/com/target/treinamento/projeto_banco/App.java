@@ -12,27 +12,27 @@ import javax.naming.spi.DirStateFactory.Result;
 
 import com.target.treinamento.projeto_banco.dao.FuncionarioDao;
 
-public class App 
-{
-	public static void main( String[] args ) throws SQLException{
-		
-		
-		FuncionarioDao fDao = new FuncionarioDao();
-		
-		//fDao.cria(new Funcionario(null, "Rafael", 4, 28, 1800.00));
-		
-		
-		
-		List<Funcionario> lista = fDao.buscaTodos();
-		for (Funcionario funcionario : lista) {
-			
-			System.out.println(funcionario.toString());
-									
-		}
-			
-		
-		
-		}		
-		
-	}
+public class App {
+//	public static void main( String[] args ) throws SQLException{
+//
+//
+//		FuncionarioDao fDao = new FuncionarioDao();
+//
+//		//fDao.cria(new Funcionario(null, "Rafael", 4, 28, 1800.00));
+//
+//
+//
+//				List<Funcionario> lista = fDao.buscaTodos();
+//				for (Funcionario funcionario : lista) {
+//					
+//					System.out.println(funcionario.toString());
+//
+//	}
+//
+//	}
+
+}		
+
+
+
 

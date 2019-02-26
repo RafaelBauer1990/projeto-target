@@ -21,8 +21,9 @@ public class FuncionarioDao {
 
 		StringBuilder sb = new StringBuilder();
 		sb.append("INSERT INTO funcionarios");
-		sb.append("(id, nome, cargo, idade, salario)");
+		sb.append("(nome, cargo, idade, salario, data_inclusao)");
 		sb.append("VALUES (?, ?, ?, ?, ?)");
+		
 
 		PreparedStatement ps = conexao.getPreparedStatement(sb.toString());
 		try {
@@ -30,6 +31,7 @@ public class FuncionarioDao {
 			ps.setInt(2, funcionario.getCargo());
 			ps.setInt(3, funcionario.getIdade());
 			ps.setDouble(4, funcionario.getSalario());
+			ps.setDate(5, new Date(funcionario.getDataInclusao().getTimeInMillis()));
 
 			ps.executeUpdate();
 
@@ -110,6 +112,7 @@ public class FuncionarioDao {
 			ps.setString(1, funcionario.getNome());
 			ps.setInt(2, funcionario.getCargo());
 			ps.setInt(3, funcionario.getIdade());
+			ps.setDouble(4, funcionario.getSalario());
 			ps.setDouble(4, funcionario.getSalario());
 
 			ps.executeUpdate();
